@@ -1,0 +1,118 @@
+﻿@model IEnumerable<DAL.Models.NguoiDung>
+
+@{
+    ViewData["Title"] = "ShowNguoiDung";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<p>
+    <a asp-action="Create">Thêm mới</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Mã
+            </th>
+            <th>
+                Loại
+            </th>
+            <th>
+                Họ lót
+            </th>
+            <th>
+                Tên
+            </th>
+            <th>
+                Ngày sinh
+            </th>
+            <th>
+                Giới tính
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sdt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Email)
+            </th>
+            <th>
+                Mật khẩu
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImgAvt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ImgBg)
+            </th>
+            <th>
+                Trạng thái
+            </th>
+            <th>
+                Mô tả
+            </th>
+            <th>
+                Ngày tạo
+            </th>
+            <th>
+                Bí danh
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaNd)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MaLoai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoLot)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ten)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgaySinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.GioiTinh)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sdt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MatKhau)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImgAvt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ImgBg)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TrangThai)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MoTa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NgayTao)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BiDanh)
+            </td>
+            <td>
+                @Html.ActionLink("Sửa", "Edit", new { id = item.MaNd }) |
+                @Html.ActionLink("Xem", "Details", new { id = item.MaNd }) |
+                @Html.ActionLink("Xóa", "Delete", new { id = item.MaNd })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
