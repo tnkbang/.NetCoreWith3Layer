@@ -10,6 +10,14 @@ namespace DAL.Repositories.Contracts
 {
     public interface IGenericRepository<TModel> where TModel : class
     {
-        Task<List<TModel>> GetNguoiDungs();
+        Task<List<TModel>> GetList();
+
+        void Create(TModel model);
+
+        void Update(TModel model);
+
+        void Delete(TModel model);
+
+        Task<NguoiDung> GetNguoiDung(string id);
     }
 }

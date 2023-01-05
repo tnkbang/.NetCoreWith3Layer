@@ -27,6 +27,47 @@ namespace Website.Controllers
             return View(lst);
         }
 
+        [HttpGet]
+        public async Task<IActionResult> DetailNguoiDung(string id)
+        {
+            NguoiDung nd = await nguoiDungServices.GetNguoiDung(id);
+            return View(nd);
+        }
+
+        [HttpGet]
+        public IActionResult CreateNguoiDung()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult CreateNguoiDung(NguoiDung nd)
+        {
+            nguoiDungServices.CreateNguoiDung(nd);
+            return Redirect("/Home/ShowNguoiDung");
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> UpdateNguoiDung(string id)
+        {
+            NguoiDung nd = await nguoiDungServices.GetNguoiDung(id);
+            return View(nd);
+        }
+
+        [HttpPost]
+        public IActionResult UpdateNguoiDung(NguoiDung nd)
+        {
+            nguoiDungServices.UpdateNguoiDung(nd);
+            return Redirect("/Home/ShowNguoiDung");
+        }
+
+        public async Task<IActionResult> DeleteNguoiDung(string id)
+        {
+            NguoiDung nd = await nguoiDungServices.GetNguoiDung(id);
+            nguoiDungServices.DeleteNguoiDung(nd);
+            return Redirect("/Home/ShowNguoiDung");
+        }
+
         public IActionResult Privacy()
         {
             return View();

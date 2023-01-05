@@ -6,7 +6,7 @@
 }
 
 <p>
-    <a asp-action="Create">Thêm mới</a>
+    <a asp-action="CreateNguoiDung" asp-controller="Home">Thêm mới</a>
 </p>
 <table class="table">
     <thead>
@@ -108,9 +108,9 @@
                 @Html.DisplayFor(modelItem => item.BiDanh)
             </td>
             <td>
-                @Html.ActionLink("Sửa", "Edit", new { id = item.MaNd }) |
-                @Html.ActionLink("Xem", "Details", new { id = item.MaNd }) |
-                @Html.ActionLink("Xóa", "Delete", new { id = item.MaNd })
+                @Html.ActionLink("Sửa", "UpdateNguoiDung", new { id = item.MaNd }) |
+                @Html.ActionLink("Xem", "DetailNguoiDung", new { id = item.MaNd }) |
+                @Html.ActionLink("Xóa", "DeleteNguoiDung", new { id = item.MaNd })
             </td>
         </tr>
 }
