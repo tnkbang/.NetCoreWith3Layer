@@ -12,9 +12,9 @@ namespace BLL.Services
 {
     public class NguoiDungServices : INguoiDungServices
     {
-        private readonly IGenericRepository<NguoiDung> repositories;
+        private readonly INguoiDungRepository<NguoiDung> repositories;
 
-        public NguoiDungServices(IGenericRepository<NguoiDung> nd)
+        public NguoiDungServices(INguoiDungRepository<NguoiDung> nd)
         {
             repositories = nd;
         }

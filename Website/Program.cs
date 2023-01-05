@@ -16,7 +16,7 @@ builder.Services.AddDbContext<DayHocTrucTuyenContext>(option =>
     option.UseSqlServer(builder.Configuration.GetConnectionString("DayHocTrucTuyen"));
 });
 
-builder.Services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+builder.Services.AddTransient(typeof(INguoiDungRepository<>), typeof(NguoiDungRepository<>));
 builder.Services.AddScoped<INguoiDungServices, NguoiDungServices>();
 
 var app = builder.Build();

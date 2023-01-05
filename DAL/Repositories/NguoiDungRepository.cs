@@ -11,20 +11,20 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repositories
 {
-    public class GenericRepository<TModel> : IGenericRepository<TModel> where TModel : class
+    public class NguoiDungRepository<NguoiDungs> : INguoiDungRepository<NguoiDungs> where NguoiDungs : class
     {
         private readonly DayHocTrucTuyenContext db;
 
-        public GenericRepository(DayHocTrucTuyenContext _db)
+        public NguoiDungRepository(DayHocTrucTuyenContext _db)
         {
             db = _db;
         }
 
-        public async Task<List<TModel>> GetList()
+        public async Task<List<NguoiDung>> GetList()
         {
             try
             {
-                return await db.Set<TModel>().ToListAsync();
+                return await db.Set<NguoiDung>().ToListAsync();
             }
             catch
             {
@@ -46,11 +46,11 @@ namespace DAL.Repositories
             }
         }
 
-        public void Create(TModel model)
+        public void Create(NguoiDung model)
         {
             try
             {
-                db.Set<TModel>().Add(model);
+                db.Set<NguoiDung>().Add(model);
                 db.SaveChanges();
             }
             catch
@@ -59,11 +59,11 @@ namespace DAL.Repositories
             }
         }
 
-        public void Update(TModel model)
+        public void Update(NguoiDung model)
         {
             try
             {
-                db.Set<TModel>().Update(model);
+                db.Set<NguoiDung>().Update(model);
                 db.SaveChanges();
             }
             catch
@@ -72,11 +72,11 @@ namespace DAL.Repositories
             }
         }
 
-        public void Delete(TModel model)
+        public void Delete(NguoiDung model)
         {
             try
             {
-                db.Set<TModel>().Remove(model);
+                db.Set<NguoiDung>().Remove(model);
                 db.SaveChanges();
             }
             catch

@@ -8,15 +8,15 @@ using DAL.Models;
 
 namespace DAL.Repositories.Contracts
 {
-    public interface IGenericRepository<TModel> where TModel : class
+    public interface INguoiDungRepository<NguoiDungs> where NguoiDungs : class
     {
-        Task<List<TModel>> GetList();
+        Task<List<NguoiDung>> GetList();
 
-        void Create(TModel model);
+        void Create(NguoiDung model);
 
-        void Update(TModel model);
+        void Update(NguoiDung model);
 
-        void Delete(TModel model);
+        void Delete(NguoiDung model);
 
         Task<NguoiDung> GetNguoiDung(string id);
     }
