@@ -8,7 +8,7 @@ using DAL.Models;
 
 namespace DAL.Repositories.Contracts
 {
-    public interface INguoiDungRepository<NguoiDungs> where NguoiDungs : class
+    public interface INguoiDungRepository<TModel> where TModel : class
     {
         Task<List<NguoiDung>> GetList();
 

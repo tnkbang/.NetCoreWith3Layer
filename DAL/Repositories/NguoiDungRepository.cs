@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DAL.Repositories
 {
-    public class NguoiDungRepository<NguoiDungs> : INguoiDungRepository<NguoiDungs> where NguoiDungs : class
+    public class NguoiDungRepository<TModel> : INguoiDungRepository<TModel> where TModel : class
     {
         private readonly DayHocTrucTuyenContext db;
 
